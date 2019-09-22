@@ -1,328 +1,511 @@
-@font-face {
-    font-family: "Bitty";
-    src: url("font/Bitty.otf");
-}
-
-@font-face {
-    font-family: "Light";
-    src: url("font/AvenirLTStd-Light.otf");
-}
-
-* {
-    font-family: "Light";
-    color: #FFF;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-.linkcontato,
-.linkhome,
-.linksobre {
-    font-family: "Light";
-}
-
-#animacao,
-.wallpaper {
-    width: 1366px;
-    height: 1080px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 999;
-    transition: all 8.9s;
-}
-
-#anim {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 20rem;
-    height: 20rem;
-    z-index: 1000;
-}
-
-nav {
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0), 0 1px 5px 0 rgba(0, 0, 0, 0) !important;
-}
-
-
-/* body {
+        @font-face {
+            font-family: "Bitty";
+            src: url("font/Bitty.otf");
+        }
+        
+        @font-face {
+            font-family: "Light";
+            src: url("font/AvenirLTStd-Light.otf");
+        }
+        
+        * {
+            font-family: "Light";
+            color: #FFF;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .linkcontato,
+        .linkhome,
+        .linksobre {
+            font-family: "Light";
+        }
+        
+        #animacao,
+        .wallpaper {
+            width: 1366px;
+            height: 1080px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2000;
+        }
+        
+        #animacao {
+            transition: all 8.9s;
+        }
+        
+        #anim {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20rem;
+            height: 20rem;
+            z-index: 3000;
+        }
+        
+        nav {
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0), 0 1px 5px 0 rgba(0, 0, 0, 0) !important;
+        }
+        /* body {
     background-color: #0b0a0a;
 } */
-
-.logo {
-    padding-top: 0.5rem;
-    width: 8.5rem;
-    margin-left: 3rem;
-}
-
-nav {
-    background-color: rgba(0, 0, 0, 0) !important;
-}
-
-.linkhome {
-    -webkit-transition: background-color .3s;
-    transition: background-color .4s;
-    font-size: 20.5px;
-    color: rgb(177, 177, 177);
-    display: block;
-    cursor: pointer;
-    z-index: 3 !important;
-}
-
-.opacidade {
-    opacity: 1 !important;
-    z-index: 2 !important;
-    position: absolute;
-    margin-top: -6% !important;
-    width: 100%;
-    height: 113.5%;
-}
-
-#white {
-    background-color: #FFF;
-}
-
-.linkhome:hover {
-    color: #fff;
-    transition: 0.5s;
-    z-index: 3 !important;
-    background-color: transparent !important;
-}
-
-.linksobre {
-    -webkit-transition: background-color .3s;
-    transition: background-color .4s;
-    font-size: 20.5px;
-    color: rgb(177, 177, 177);
-    display: block;
-    cursor: pointer;
-    z-index: 3 !important;
-}
-
-.linksobre:hover {
-    color: #fff;
-    transition: 0.5s;
-    z-index: 3 !important;
-    background-color: transparent !important;
-}
-
-.linkcontato {
-    -webkit-transition: background-color .3s;
-    transition: background-color .3s;
-    font-size: 20.5px;
-    color: rgb(177, 177, 177);
-    display: block;
-    margin-right: 10rem;
-    cursor: pointer;
-    z-index: 3 !important;
-}
-
-.linkcontato:hover {
-    color: #fff;
-    transition: 0.5s;
-    z-index: 3 !important;
-    background-color: transparent !important;
-}
-
-footer {
-    z-index: 3;
-    background-color: black;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 95rem;
-}
-
-.page-footer {
-    padding-top: 0px !important;
-}
-
-.parallax-container {
-    height: 44rem !important;
-    /* position: fixed; */
-    margin-left: -1px !important;
-}
-
-.scroll-down {
-    position: absolute;
-    left: 50%;
-    bottom: 100px;
-    display: block;
-    text-align: center;
-    font-size: 20px;
-    z-index: 3;
-    text-decoration: none;
-    text-shadow: 0;
-    width: 30px;
-    height: 30px;
-    border-bottom: 2px solid white;
-    border-right: 2px solid white;
-    -webkit-transform: translate(-50%, 0) rotate(45deg);
-    animation: fade_move_down 3s cubic-bezier(0.19, 1, 0.22, 1) infinite
-}
-
-.logobody {
-    position: absolute;
-    width: 50rem;
-    margin-left: -8rem;
-    bottom: 14rem;
-    z-index: 3;
-}
-
-@keyframes fade_move_down {
-    0% {
-        transform: translate(0, -20px) rotate(45deg);
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(0, 20px) rotate(45deg);
-        opacity: 0;
-    }
-}
-
-.typewriter {
-    color: rgb(177, 177, 177) !important;
-    font-family: monospace;
-    overflow: hidden;
-    position: absolute;
-    left: 2rem;
-    top: 35%;
-    font-size: 5rem;
-    /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid #ff20205d !important;
-    /* The typwriter cursor */
-    white-space: nowrap;
-    /* Keeps the content on a single line */
-    margin: 0 auto;
-    /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em;
-    /* Adjust as needed */
-    animation: typing 3.5s steps(30, end), blink-caret .5s step-end infinite;
-}
-
-
-/* The typing effect */
-
-@keyframes typing {
-    from {
-        width: 0
-    }
-    to {
-        width: 70%
-    }
-}
-
-
-/* The typewriter cursor effect */
-
-@keyframes blink-caret {
-    from,
-    to {
-        border-color: transparent
-    }
-    50% {
-        border-color: #ff20205d
-    }
-}
-
-.section-title {
-    text-align: center;
-}
-
-.border {
-    width: 60rem;
-    height: 0.1rem;
-    background: #ff20205d;
-    margin: 40px auto;
-}
-
-.services-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.service-box1,
-.service-box2,
-.service-box3 {
-    max-width: 33.33%;
-    padding: 10px;
-    text-align: center;
-    color: #ddd;
-    cursor: pointer;
-}
-
-
-/* 
+        
+        .logo {
+            padding-top: 0.5rem;
+            width: 8.5rem;
+            margin-left: 3rem;
+        }
+        
+        nav {
+            background-color: rgba(0, 0, 0, 0) !important;
+        }
+        
+        .linkhome {
+            -webkit-transition: background-color .3s;
+            transition: background-color .4s;
+            font-size: 20.5px;
+            color: rgb(255, 255, 255);
+            display: block;
+            cursor: pointer;
+            z-index: 3 !important;
+        }
+        
+        .opacidade {
+            opacity: 1 !important;
+            z-index: 2 !important;
+            position: absolute;
+            margin-top: -6% !important;
+            width: 100%;
+            height: 113.5%;
+        }
+        
+        .opacidade1 {
+            opacity: 1 !important;
+            z-index: 2000000 !important;
+            position: fixed;
+            margin-top: -61% !important;
+            width: 100rem;
+            height: 54rem;
+            margin-left: -178%;
+        }
+        
+        svg {
+            width: 4rem;
+            height: 4rem;
+        }
+        
+        #black {
+            background-color: #000;
+        }
+        
+        .linkhome:hover {
+            color: rgb(180, 180, 180);
+            transition: 0.5s;
+            z-index: 3 !important;
+            background-color: transparent !important;
+        }
+        
+        .linksobre {
+            -webkit-transition: background-color .3s;
+            transition: background-color .4s;
+            font-size: 20.5px;
+            color: rgb(255, 255, 255);
+            display: block;
+            cursor: pointer;
+            z-index: 3 !important;
+        }
+        
+        .linksobre:hover {
+            color: rgb(180, 180, 180);
+            transition: 0.5s;
+            z-index: 3 !important;
+            background-color: transparent !important;
+        }
+        
+        .linkcontato {
+            -webkit-transition: background-color .3s;
+            transition: background-color .3s;
+            font-size: 20.5px;
+            color: rgb(255, 255, 255);
+            display: block;
+            margin-right: 10rem;
+            cursor: pointer;
+            z-index: 3 !important;
+        }
+        
+        .linkcontato:hover {
+            color: rgb(180, 180, 180);
+            transition: 0.5s;
+            z-index: 3 !important;
+            background-color: transparent !important;
+        }
+        
+        footer {
+            z-index: 3;
+            background-color: black;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 95rem;
+        }
+        
+        .page-footer {
+            padding-top: 0px !important;
+        }
+        
+        .parallax-container {
+            height: 44rem !important;
+            /* position: fixed; */
+            margin-left: -1px !important;
+        }
+        
+        .scroll-down {
+            position: absolute;
+            left: 50%;
+            bottom: 100px;
+            display: block;
+            text-align: center;
+            font-size: 20px;
+            z-index: 3;
+            text-decoration: none;
+            text-shadow: 0;
+            width: 30px;
+            height: 30px;
+            border-bottom: 2px solid white;
+            border-right: 2px solid white;
+            -webkit-transform: translate(-50%, 0) rotate(45deg);
+            animation: fade_move_down 3s cubic-bezier(0.19, 1, 0.22, 1) infinite
+        }
+        
+        .logobody {
+            position: absolute;
+            width: 50rem;
+            margin-left: -8rem;
+            bottom: 14rem;
+            z-index: 3;
+        }
+        
+        @keyframes fade_move_down {
+            0% {
+                transform: translate(0, -20px) rotate(45deg);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(0, 20px) rotate(45deg);
+                opacity: 0;
+            }
+        }
+        
+        .typewriter {
+            color: rgb(177, 177, 177) !important;
+            font-family: monospace;
+            overflow: hidden;
+            position: absolute;
+            left: 2rem;
+            top: 35%;
+            font-size: 5rem;
+            /* Ensures the content is not revealed until the animation */
+            border-right: .15em solid #ff20205d !important;
+            /* The typwriter cursor */
+            white-space: nowrap;
+            /* Keeps the content on a single line */
+            margin: 0 auto;
+            /* Gives that scrolling effect as the typing happens */
+            letter-spacing: .15em;
+            /* Adjust as needed */
+            animation: typing 3.5s steps(30, end), blink-caret .5s step-end infinite;
+        }
+        /* The typing effect */
+        
+        @keyframes typing {
+            from {
+                width: 0
+            }
+            to {
+                width: 70%
+            }
+        }
+        /* The typewriter cursor effect */
+        
+        @keyframes blink-caret {
+            from,
+            to {
+                border-color: transparent
+            }
+            50% {
+                border-color: #ff20205d
+            }
+        }
+        
+        .section-title {
+            text-align: center;
+        }
+        
+        .border {
+            width: 60rem;
+            height: 0.1rem;
+            background: #ff20205d;
+            margin: 40px auto;
+        }
+        
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .service-box1,
+        .service-box2,
+        .service-box3 {
+            max-width: 33.33%;
+            padding: 10px;
+            text-align: center;
+            color: #ddd;
+            cursor: pointer;
+        }
+        /* 
 .service-box1,
 .service-box2,
 .service-box3 {
     flex: 1;
 } */
-
-
-/* i {
+        /* i {
     font-size: 150px !important;
     color: rgb(177, 177, 177) !important;
     cursor: pointer;
 } */
-
-.service-title2 {
-    font-weight: bold;
-    font-size: 25px;
-    color: #fff !important;
-}
-
-.service-desc {
-    font-size: 20px;
-    color: #fff!important;
-}
-
-
-/*.i:hover {
+        
+        .service-title2 {
+            font-weight: bold;
+            font-size: 25px;
+            color: #fff !important;
+        }
+        
+        .service-desc {
+            font-size: 20px;
+            color: #fff!important;
+        }
+        /*.i:hover {
     color: #ff20205d !important;
     transition: 0.5s;
 } */
-
-.service-icon {
-    display: inline-block;
-    width: 70px;
-    height: 70px;
-    border: 3px solid #ff20205d;
-    color: #ff20205d;
-    transform: rotate(45deg);
-    margin-bottom: 30px;
-    margin-top: 16px;
-    transition: 0.3s linear;
-}
-
-.service-icon i {
-    line-height: 60px;
-    transform: rotate(-45deg);
-    font-size: 50px;
-    margin-top: 3px;
-    margin-left: 5px;
-}
-
-.service-box1:hover .service-icon {
-    background: #ff20205d !important;
-    color: #ddd;
-}
-
-.service-box2:hover .service-icon {
-    background: #ff20205d !important;
-    color: #ddd;
-}
-
-.service-box3:hover .service-icon {
-    background: #ff20205d !important;
-    color: #ddd;
-}
+        
+        .service-icon {
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            border: 3px solid #ff20205d;
+            color: #ff20205d;
+            transform: rotate(45deg);
+            margin-bottom: 30px;
+            margin-top: 16px;
+            transition: 0.3s linear;
+        }
+        
+        .service-icon i {
+            line-height: 60px;
+            transform: rotate(-45deg);
+            font-size: 50px;
+            margin-top: 3px;
+            margin-left: 5px;
+        }
+        
+        .service-box1:hover .service-icon {
+            background: #ff20205d !important;
+            color: #ddd;
+        }
+        
+        .service-box2:hover .service-icon {
+            background: #ff20205d !important;
+            color: #ddd;
+        }
+        
+        .service-box3:hover .service-icon {
+            background: #ff20205d !important;
+            color: #ddd;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                transform: translate3d(0, 40px, 0)
+            }
+            to {
+                transform: translate3d(0, 0, 0);
+                opacity: 1
+            }
+        }
+        
+        @-webkit-keyframes fadeInUp {
+            from {
+                transform: translate3d(0, 40px, 0)
+            }
+            to {
+                transform: translate3d(0, 0, 0);
+                opacity: 1
+            }
+        }
+        
+        .animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            -webkit-animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            z-index: 99999;
+        }
+        
+        .animatedFadeInUp {
+            opacity: 0;
+            z-index: 99999;
+        }
+        
+        .fadeInUp {
+            opacity: 0;
+            animation-name: fadeInUp;
+            -webkit-animation-name: fadeInUp;
+            z-index: 99999;
+        }
+        
+        svg {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%) rotate(45deg) scale(1);
+            transform: translate(-50%, -50%) rotate(45deg) scale(1);
+            z-index: 99999999999999999999 !important;
+        }
+        
+        .stroke-still {
+            stroke: #232323;
+        }
+        
+        .stroke-animation {
+            -webkit-animation: stroke-spacing 1.2s ease-in, stroke-color 4.8s linear;
+            animation: stroke-spacing 1.2s ease-in, stroke-color 4.8s linear;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            -webkit-animation-delay: 0;
+            animation-delay: 0;
+            -webkit-animation-direction: normal;
+            animation-direction: normal;
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+            -webkit-animation-play-state: running;
+            animation-play-state: running;
+            -webkit-transform-origin: center center;
+            transform-origin: center center;
+        }
+        
+        @-webkit-keyframes stroke-spacing {
+            0% {
+                stroke-dasharray: 0 200;
+            }
+            45% {
+                stroke-dashoffset: 0;
+                stroke-dasharray: 200 200;
+            }
+            90% {
+                stroke-dashoffset: -200;
+                stroke-dasharray: 200 200;
+            }
+            100% {
+                stroke-dashoffset: -200;
+                stroke-dasharray: 200 200;
+            }
+        }
+        
+        @keyframes stroke-spacing {
+            0% {
+                stroke-dasharray: 0 200;
+            }
+            45% {
+                stroke-dashoffset: 0;
+                stroke-dasharray: 200 200;
+            }
+            90% {
+                stroke-dashoffset: -200;
+                stroke-dasharray: 200 200;
+            }
+            100% {
+                stroke-dashoffset: -200;
+                stroke-dasharray: 200 200;
+            }
+        }
+        
+        @-webkit-keyframes stroke-color {
+            0% {
+                stroke: #3498DB;
+            }
+            24% {
+                stroke: #643232;
+            }
+            25% {
+                stroke: #327864;
+            }
+            49% {
+                stroke: #327864;
+            }
+            50% {
+                stroke: #32326e;
+            }
+            74% {
+                stroke: #32326e;
+            }
+            75% {
+                stroke: #78325a;
+            }
+            99% {
+                stroke: #78325a;
+            }
+        }
+        
+        @keyframes stroke-color {
+            0% {
+                stroke: #3498DB;
+            }
+            24% {
+                stroke: #643232;
+            }
+            25% {
+                stroke: #327864;
+            }
+            49% {
+                stroke: #327864;
+            }
+            50% {
+                stroke: #32326e;
+            }
+            74% {
+                stroke: #32326e;
+            }
+            75% {
+                stroke: #78325a;
+            }
+            99% {
+                stroke: #78325a;
+            }
+        }
+        
+        html {
+            scrollbar-width: none !important;
+        }
+        
+        .card.small {
+            height: 20rem;
+            width: 20rem;
+            flex: 1;
+            margin-left: 1rem;
+            margin-top: 5rem;
+            margin-right: 1rem;
+        }
+        
+        .card-image {
+            max-height: 100% !important;
+        }
